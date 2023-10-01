@@ -1,0 +1,43 @@
+<!-- Map is same just like as an Object  -->
+
+<!-- Object : -  {name : anil} ; The key must be in the string data type--> 
+
+<!-- Map : -  {name => anil} The key can be of any data type -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Data Structure</title>
+    <script>
+        let data = new Map([
+            ['name', 'Hasan'],
+            [true, 'bool key'],
+            [100, "number"],
+        ]);
+
+        data.set('colors', 'red');
+
+        // console.log(data.size);
+        // console.log(data.has(100));
+        // console.log(data.get(true));
+        // data.clear();
+
+        // for (let x of data) {
+        //     console.warn(x)
+        // }
+        
+        // data.forEach((val, key, map) => {
+        //     console.warn(val);
+        // })
+
+        data.delete('name');  // Delete the name key from the map 
+
+        console.warn(data);
+    </script>
+</head>
+<body>
+    <h1>Map DSA in JavaScript</h1>
+</body>
+</html>

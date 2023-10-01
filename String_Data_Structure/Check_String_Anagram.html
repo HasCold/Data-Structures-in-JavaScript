@@ -1,0 +1,47 @@
+<!-- Check Strings are Anagram -->
+
+<!-- cat --- tac, tca, cta  ; characters are same but their arrangements will be different -->
+<!-- hello --- ollhe , helol  ;  -->
+
+<!-- Conditions to check the strings are anagram  -->
+<!--1. Characters must be same -->
+<!-- 2. length must be same -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Anagram</title>
+    <script>
+        function checkAnagram(str1, str2){
+            let ObjStr1 = {};
+
+            if(str1.length !== str2.length){
+                return false;
+            }
+            
+            for(let ch of str1){
+                console.warn(ch);
+                ObjStr1[ch] = (ObjStr1[ch] || 0) + 1;
+            }
+            console.warn(ObjStr1);
+
+            for(let ch of str2){
+                console.warn(ObjStr1[ch]);
+                if(!ObjStr1[ch]){
+                    return false
+                }
+
+                console.warn(ObjStr1[ch]--)
+            }
+            return true;
+        }   
+
+        console.warn(checkAnagram("hello", "ehllo"));
+    </script>
+</head>
+<body>
+    <h1>Check Strings are Anagram</h1>
+</body>
+</html>

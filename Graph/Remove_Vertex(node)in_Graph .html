@@ -1,0 +1,84 @@
+<!-- To remove the A(node) vertex and B(node) vertex in the graph  -->
+
+<!-- It is also important to remove the edges from graph while deleting the vertices or nodes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove the nodes in graph</title>
+    <script>
+        class Graph{
+            constructor(){
+                this.data = {}; // array of an object 
+            }
+
+            addVertex(vertex){   // Add node in the graph or simply we are only creating the nodes for the graphs
+                if(!this.data[vertex]){
+                    this.data[vertex] = [];
+                }else{
+                    alert("Vertex is already present in the graph !")
+                }    
+            }
+
+            addEdges(ver1, ver2){
+                if(!this.data[ver1]){
+                    this.addVertex(ver1);
+                }
+                if(!this.data[ver2]){
+                    this.addVertex(ver2);
+                }
+
+                this.data[ver1].push(ver2); // We have to connect the vertex A with vertex C 
+                this.data[ver2].push(ver1); // Simply we already did here connect the vertex C with the vertex A
+            }
+
+            removeEdge(v1, v2){
+                // Removing the edges between the A node and B node 
+
+                this.data[v1] = this.data[v1].filter((item) => item !== v2);  // Returns the data which is not equal to v2 means disconnect the B node from A node 
+                
+                this.data[v2] = this.data[v2].filter((item) => item !== v1);  
+
+            }
+
+            removeVertex(vertex){
+                if(!this.data[vertex]){
+                    alert("Vertex not available in graph");
+                }
+
+                for (let item of this.data[vertex]){
+                    // call the remove edge function
+                    this.removeEdge(vertex, item); // it diconnect the connection between A and B , A and C
+                }
+
+                delete this.data[vertex];  // Delete that particular vertex
+            }
+        }
+
+        const graph1 = new Graph();
+        graph1.addVertex("A");
+        graph1.addVertex("B");
+        graph1.addVertex("C");
+        graph1.addVertex("D");
+
+        graph1.addEdges("A", "C")
+        graph1.addEdges("A", "B")
+        graph1.addEdges("B", "C")
+        graph1.addEdges("B", "D");
+
+        // graph1.removeEdge("A", "B");
+        // graph1.removeEdge("B", "D");  // Disconnecting the edges of B vertice and D vertices in the graph
+        
+        graph1.removeVertex("A");
+        // graph1.removeVertex("D");
+        
+        console.warn(graph1.data);
+    </script>
+</head>
+<body>
+    <h1>Deleting the nodes in graph</h1>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!-- Linear Search Algorithm  -->
+<!-- We have two Searching 
+1. Linear Search 
+2. Binary Search -->
+
+
+<!-- Linear Search is also called as Sequential Search Algorithm. In linear search we simply traverse the list completely and match each elements of the list with the item whose locations to be found-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search Algorithm</title>
+    <script>
+        // Linear Search
+
+        function linearSearch(){
+        let data = [30, 13, 45, 78, 2, 9, 5, 50];
+        let pos = undefined;
+        let find = document.getElementById("ele").value;
+        find = parseInt(find);
+
+
+            for(let i = 0; i <= data.length; i++){
+                if(data[i] === find){
+                    pos = i;
+                    break;
+                }
+            }
+            if(!pos){
+                alert("Psoition not found")
+            }
+            
+    console.warn(pos);
+        }
+    </script>
+</head>
+<body>
+    <h1>Linear Search Algorithm</h1>
+    <input type="text" id="ele" placeholder="Enter Element">
+    <button onclick="linearSearch()">Search Element</button>
+</body>
+</html>
+
+<!-- 
+Interview Questions :--
+
+How many types of algorithm? 
+
+1. Linear Search Algorithm
+2. Binary Search Algorithm
+
+What is the complexity of linear search
+
+A) The complexity of a linear search algorithm is O(n), where 'n' represents the number of elements in the list or array being searched.   -->

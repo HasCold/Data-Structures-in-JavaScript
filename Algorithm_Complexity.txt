@@ -1,0 +1,14 @@
+Algorthm Complexity
+
+Algorithm -->> Basically it is the steps to do any thing like we have did in programming
+
+When we make the programs so this should be measure by the Algorithm complexity 
+1. Time Complexity -->> Time Complexity is mainly calculated by counting the number of steps to finish the execution.
+-->> When we calculate the time so we focus on how much number of lines in the program are there as well as also focus is there any loop running in the specific program ; It should also matter a lot for the time complexity
+
+2. Space Complexity -->> Space Complexity is the amount of space required to solve a problem 
+
+space complexity = Auxiliary space + input size 
+input size means how much variables are defined in the program
+
+Big O Notation :- Used to denote the Complexity(both).

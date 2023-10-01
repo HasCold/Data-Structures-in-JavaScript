@@ -1,0 +1,49 @@
+<!-- Object (Hash Table) DS in JavaScript -->
+
+<!-- What is Object ?  -->
+
+<!-- Object can be defined by {} in a key-value pairs  -->
+
+<!-- What is the need of an array if we have an Object? (Important Interview Question) -->
+
+<!-- When we store the values in array we cannot identify the specific values from array unlike in the Object we can identify the specific name, age, email and other information   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Hash Table</title>
+    <script>
+        const data = {
+            name: "Hasan",
+            fullName: "Muhammad Hasan Ali",
+            age: 22,
+            email: "abc@test.com",
+            getName: function(){
+                return this.fullName
+            },
+        }
+        data.contact = "123342"
+        Object.freeze(data);  // You can isolate the new entries in our Object
+        
+        delete data.name;  // Delete the specific key-value pairs by the delete keyword   
+        
+        for(let x in data){
+            console.warn(x);  // Return the keys of our Object
+            console.warn(data[x]);  // Return the all information of our Object
+        }
+
+        console.warn(data);
+
+        // Object property return the keys into an array
+        console.warn(Object.keys(data));  // return the keys into an array 
+        console.warn(Object.values(data)); // return the values into an array 
+        console.warn(Object.entries(data)); // return the every key into an array ; convert the key into first element and the value into second element of an array 
+
+    </script>
+</head>
+<body>
+    <h1>Object Hash Table</h1>
+</body>
+</html>

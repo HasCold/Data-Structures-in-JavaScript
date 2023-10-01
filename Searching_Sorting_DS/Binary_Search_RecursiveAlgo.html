@@ -1,0 +1,67 @@
+<!-- Bianry Search Algorithm with Recursive Approach -->
+
+<!-- There are two approaches in the binary search 
+
+1. Iterative Approach  = Loop 
+2. Recursive Approach = Recursion 
+-->
+
+<!-- Binary Search with Recursive approach -- It divides the array in two equal parts and also it depends on the no. of inputs and you also  takes out the mid-point in the array -->
+<!-- After taking the middle then you have to decide whether you can go ahead or move backward and then again find the middle point in the divided array we have decided to work on and based on that new middle point we can find the particular element from the array-->
+
+<!-- Important thing is that we have to implement the binary search only on sorted array or we have another options to sort the array first
+If we have unsorted array so might be possible we use linear search but sometimes it gives a low performance issue   -->
+
+<!-- In Iterative, we use loop -->
+<!-- In Recursive, we use Recursion -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search with Recursive Approach</title>
+    <script>
+        let data = [13, 67, 2, 22, 8, 70, 3]
+
+        // First we have to sort the array elements
+        for(let i = 0; i < data.length; i++){
+            for(let j = 0; j < data.length; j++){
+                if(data[j] >= data[j + 1]){
+                    let temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
+        console.warn(data);  // [ 2, 3, 8, 13, 22, 67, 70 ]
+    
+    let sortedArr = [...data];
+    let start = 0;
+    let end = sortedArr.length - 1;
+    let find = 3;
+    let position = undefined;
+
+    function binaryRecursive(items, start, end){
+        let mid = Math.floor((start + end) / 2);
+        if(sortedArr[mid] === find){
+            console.table("Mid-point :- ", mid);
+            position = mid;
+            return true;
+        }else if(sortedArr[mid] < find){
+            binaryRecursive(sortedArr, mid + 1, end);
+        }else{
+            binaryRecursive(sortedArr, start, mid - 1);
+        }
+
+    }
+    
+    binaryRecursive(sortedArr, start, end);
+    console.warn(position);
+
+    </script>
+</head>
+<body>
+    <h1>Binary Search with Recursive Approach</h1>
+</body>
+</html>

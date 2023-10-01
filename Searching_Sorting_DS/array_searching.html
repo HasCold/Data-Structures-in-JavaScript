@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversing</title>
+<script>
+    // ***************** Linear Search *******************
+    //  Searching is also same as to be traversing
+
+    let data = [9,45,12,3,0,77,6,5,33];
+        for(let i = 0; i < data.length; i++){
+            document.write(`Index ${i} is ${data[i]} <br>`)
+        }
+
+    const Search = () => {
+
+        let item = document.getElementById("element").value;
+        item = parseInt(item);  //  The value that comes from input box may also be string so we should convert into number through parseInt(); 
+        let index = undefined;
+        
+        for (let i = 0; i < data.length; i++) {
+            console.warn("Before Searching", data[i]);
+            if(data[i] === item){
+                index = i;
+                break;
+            }
+        }
+        if(!index){
+            alert(`Number Not Found!`)
+        }
+        console.warn(index);
+    }
+
+    // BY-DEFAULT Search Function :- 
+    // console.warn(data.indexOf(item));
+
+</script>
+</head>
+<body>
+    <div style="margin-top: 2rem; margin-left: 5rem;">
+        <h2>Search Element</h2>
+        <input type="text" id="element" placeholder="Enter Element" style='margin-top: 1rem'>
+        <button onclick={Search()}>Search</button>    
+    </div>
+</body>
+</html>

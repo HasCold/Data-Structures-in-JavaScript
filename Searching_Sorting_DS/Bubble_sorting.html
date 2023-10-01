@@ -1,0 +1,34 @@
+<!-- Array Sorting -->
+
+<!-- Bubble Sorting = Easy to understand for everyone ; If you undertsand the nested looping then it is very easy for you to solve any data structure like array, stack, tree, queue, graph-->
+<!-- Sorting is the most toughest Data structure in all of the Data Structures -->
+<!-- In most of the sorting we use double for-loop -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sorting</title>
+    <script >
+        // BUBBLE SORTING
+        let data = [30, 40, 2, 14];
+
+        for(let i = 0; i < data.length; i++){  // 2 nested loop will run for 16 times ; 4 * 4 = 16
+            for(let j = 0; j < data.length; j++){
+                 console.warn(data);
+                if(data[j] > data[j + 1]){
+                    let tempVar = data[j];
+                    data[j] = data[j+1];
+                    data[j+1] = tempVar;        
+                }
+            }
+        }
+        console.warn(data);
+    </script>
+</head>
+<body>
+    <h1>Array Sorting in JavaScript</h1>
+</body>
+</html>

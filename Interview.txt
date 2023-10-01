@@ -1,0 +1,1 @@
+In JavaScript, the Sorting and Merging questions will be asked more as compared to the tree, graph, linked-list, queue etc. 

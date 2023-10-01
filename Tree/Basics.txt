@@ -1,0 +1,27 @@
+Tree Data Structure is a non-linear data structure. 
+Tree is a data hierarchical representation in which the data are present in the form of nodes and connected with the edges  
+
+Just like we have a best example of tree D.S. is :-  "DOM tree"
+
+
+Bianry Tree Data Structure :- 
+
+In binary, the tree have maximum two nodes in the left and right position. 
+
+*********************** IMPLEMENTATION *******************************
+
+We only implement the binary search tree or binary tree in the Tree Data Structure
+
+************************ ORDER *****************************
+
+Left Node < Root Node < Right Node
+
+***************** Degree Of Node ***********************
+
+How many child of nodes we have in a tree 
+
+So, basically in binary search tree we have 2 degree of node for the every node 
+
+************** TERMINAL NODES *********************
+
+Those nodes that doesn't have any child at the end  

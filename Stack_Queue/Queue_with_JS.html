@@ -1,0 +1,70 @@
+<!-- Queue with JavaScript -->
+
+<!-- Two main operation in queue:-  -->
+<!-- Implement enqueue and dequeue functions for operations; -->
+
+<!-- Queue is linear data structure in which the elements are in sequence;  -->
+<!-- Graph and Tree are non-linear data structure -->
+
+<!-- In Stack, approach of the element First In Last Out and Last In First Out -->
+<!-- In Queue, approach of the element First In First Out and Last In Last Out  -->
+
+<!-- Enqueue -- Add item in queue; The item will be added in the queue from the front -->
+<!-- Dequeue -- Remove item in queue; The item will be removed from the rear part of the queue -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue with JS</title>
+    <script>
+        let queue = [];
+        let currentSize = queue.length;
+        let maxSize = 5;
+
+        // We have added the element from the start of the queue and remove the element from the start of the queue 
+
+        function enqueue(item){
+         
+            if(currentSize >= maxSize){
+                alert("Queue is already full !");
+            }else{    
+            queue[currentSize] = item;
+            currentSize++
+            }
+        }
+
+        function dequeue(){
+            if(currentSize > 0){
+
+                for(let i = 0; i < queue.length; i++){
+                    queue[i] = queue[i + 1];
+                }
+                currentSize--
+                queue.length = currentSize;
+                // console.warn(queue[currentSize - 1]);
+            }else{
+                alert("Queue is already empty !");
+            }
+        }
+
+        function display(){    
+        console.warn(queue)
+        }
+
+        // let item = 5;
+        enqueue(5);
+        enqueue(13);
+        enqueue(66);
+        enqueue(21);
+        enqueue(7);
+
+        display(); 
+
+    </script>
+</head>
+<body>
+    <h1>Queue with JavaScript</h1>
+</body>
+</html>

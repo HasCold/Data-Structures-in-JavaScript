@@ -1,0 +1,48 @@
+<!-- RECURSION DATA STRUCTURE -->
+
+<!-- It is one of the most toughest data structure ; Recusrion is a DS like array, link-list, queue, tree etc -->
+<!-- Re-cursion = repeatedly call yourself ; Means a function who call their self everytime-->
+
+<!-- Recursion is all about condition -->
+
+<!-- e.g. ->> function apple (){
+    function call inside  -- This means that there is a infinte loop
+            apple()
+} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+    <script>
+        // function apple(x){
+        //     console.warn(x);
+        //     if(x < 15){
+        //         // x++
+        //         apple(x + 1);
+        //     }
+        // }
+        // let data = 0;
+        // apple(data);
+
+        // FACTORIAL OF 5 =  5*4*3*2*1
+
+        function Recursion(fac){
+        
+            if(fac === 0){
+               return 1;
+            }
+            // Recursion will repeatedly call their self ; This recusrion function will run internally into their loop
+            return fac * Recursion(fac - 1);
+        //DEMO :-  return fac * Recursion(5 - 1) * Recursion(4 - 1) * Recursion(3 - 1) * Recursion(2 - 1) * Recursion(1 - 1)
+        }
+        let fac = 6
+        console.warn(Recursion(fac));
+    </script>
+</head>
+<body>
+    <h1>Recursion</h1>
+</body>
+</html>

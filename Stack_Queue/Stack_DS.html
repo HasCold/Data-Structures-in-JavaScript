@@ -1,0 +1,56 @@
+<!-- Stack is a Linear Data Structure Type -->
+
+<!-- All The Operations in Stack is done at the top either it will be add or remove ; First In Last Out ; Last In First Out -->
+
+<!-- The Operation will be done at one end only -->
+
+<!-- By-Default / Pre-Defined function for the Operation in Stack -- 
+1. push() = new add element
+2. pop() = remove element
+3. isempty() 
+4. peak -->
+
+<!-- The Stack and Queue operation can be done by array as you can see below ; we can also use the object but it will not considered as efficient in the case of Stack and Queue-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack DS</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+        let maxSize = 5;
+        
+        function push (newVal){
+            if(currentSize >= maxSize){
+                alert("Stack is full, you cannot add "+newVal);
+            }
+
+            data[currentSize] = newVal;
+            currentSize++;  // currentSize += 1
+        }
+
+        function pop(){
+            if(currentSize > 0){
+                currentSize -= 1;
+                data.length = currentSize;
+            }else{
+                alert("Stack is already empty !");
+            }
+        }
+
+        push(20);
+        push(3);
+        push(55);
+        push(21);
+        push(8);
+        pop();
+        console.warn(data);
+    </script>
+</head>
+<body>
+    <h1>Stack Data Structure</h1>
+</body>
+</html>

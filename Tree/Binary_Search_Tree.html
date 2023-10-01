@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree</title>
+    <script>
+        // left node < root node < right node
+        class Node {
+            constructor(val){
+                this.value = val;
+                this.left = null;
+                this.right = null;
+            }
+        }
+        class BSTree{
+            constructor(){  // Constructor is called when the BSTree is invoke
+                this.root = null;
+            }
+
+            isTreeEmpty(){
+                return this.root === null;
+            }
+
+            makeTree(val){
+                let newNode = new Node(val);
+                if(this.root === null){
+                    this.root = newNode;
+                }else{
+                    this.insertNode(this.root, newNode);
+                }
+            }
+
+            insertNode(root, newNode){
+                if(root.value > newNode.value){
+                    if(root.left === null){
+                        root.left = newNode;
+                    }else{
+                        this.insertNode(root.left, newNode);
+                    }
+                }else{
+                    if(root.right === null){
+                        root.right = newNode;
+                    }else{
+                        this.insertNode(root.right, newNode);
+                    }
+                }
+            }
+
+            search(root, val){
+                if(root === null){
+                    return false;
+                }else if(root.value === val){
+                    return true;
+                }else if(root.value > val){   // for left node 
+                    return this.search(root.left, val);
+                }else{   // for right node
+                    return this.search(root.right, val);
+                }
+            }
+        }
+
+        let bst = new BSTree();
+        function AddVal(){
+            let val = document.getElementById("btn-1").value;
+            val = parseInt(val);
+            
+            bst.makeTree(val);
+            document.getElementById("btn-1").value = ""
+            console.warn(bst);
+        }
+
+        function findValFromtree(){
+            let searchVal = document.querySelector("#btn-2").value;
+            searchVal = parseInt(searchVal);
+
+            console.log(bst.search(bst.root, searchVal));
+            document.querySelector("#btn-2").value = ""
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Binary Search Tree in JavaScript</h1>
+    <input type="text" placeholder="Enter value" id="btn-1">
+    <button onclick="AddVal()">Add to the tree</button>
+    <br>
+    <input id="btn-2" type="text" placeholder="Find element from tree" style="margin-top: 10px;">
+    <button onclick="findValFromtree()">Find Value From Tree</button>
+</body>
+</html>

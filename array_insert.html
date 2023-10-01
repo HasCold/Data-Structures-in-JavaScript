@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure & Algorithm</title>
+    <script>
+
+    // Below is the javascript insert manual function ; also we have a built-in JavaScript called as splice();
+    // splice(index, how much elements want to delete, insert the element on that index)
+    
+        const insertEle = () => {
+
+        // when we insert the element at any specfic index so the best approach is to do that from the end of an array
+        let data = [9,45,12,3,0,77,6,5,33,14,56,22,1,2];
+        let newElement = document.getElementById('newElement').value;
+        newElement = parseInt(newElement);
+        let position = document.getElementById('position').value;
+        console.warn("Before inserting data", data);
+        if(position <= data.length){
+
+            for(let i = data.length-1; i >= 0; i--){  // This is also called reverse-loop
+                // console.warn(data[i]);
+                if(i >= position){
+                    data[i+1] = data[i];
+                    if(i == position){
+                        data[i] = newElement;
+                    }
+                }
+            }
+            }else{
+                alert("Invalid Position Or Invalid Element")
+            }
+            console.warn("After inserting data",data);
+        }        
+
+    </script>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; margin-top: 10em;">
+        <input type="text" id="position" placeholder='Enter position' style="margin: auto; margin-bottom: 1rem;">
+        <input type="text" id="newElement" placeholder='Enter new element' style="margin: auto;  margin-bottom: 1rem;">
+        <button onclick={insertEle()} style="margin: auto;">Insert</button>
+    </div>
+</body>
+</html>

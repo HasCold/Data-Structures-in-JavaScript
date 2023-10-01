@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [9,45,12,3,0,77,6,5,33,14,56,22,1,2];
+        for(let i = 0; i < data.length; i++){
+            document.write(`Index ${i} is ${data[i]} <br>`)
+        }
+
+        function deleteEle(){
+            
+            let position = document.getElementById('position').value;  
+            position = parseInt(position);  // The value that comes from input box may also be string so we should convert into number through parseInt(); 
+            if(position <= data.length){
+
+                for(let i = position; i < data.length; i++){
+                    console.log(data[i]);
+                    data[i] = data[i + 1] 
+                }
+                data.length = data.length - 1;
+                console.warn("After deleting the element", data);
+            }else{
+                alert("Invalid index number")
+            }
+        }
+
+        // BY-DEFAULT Delete Function :- 
+
+        // splice(index, how much elements want to delete, insert the element on that index)
+        // console.warn(data.splice(2, 1)); 
+
+
+    </script>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; margin-top: 10em;">
+        <input type="text" id="position" placeholder='Enter position' style="margin: auto; margin-bottom: 1rem;">
+        <button onclick="deleteEle()" style="margin: auto;">Delete</button>
+    </div>
+</body>
+</html>

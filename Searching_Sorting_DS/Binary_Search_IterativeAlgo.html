@@ -1,0 +1,73 @@
+<!-- Bianry Search Algorithm with Iterative Approach -->
+
+<!-- There are two approaches in the binary search 
+
+1. Iterative Approach  = Loop 
+2. Recursive Approach = Recursion 
+-->
+
+<!-- Binary Search with Iterative approach -- It divides the array in two equal parts and also it depends on the no. of inputs and you also  takes out the mid-point in the array -->
+<!-- After taking the middle then you have to decide whether you can go ahead or move backward and then again find the middle point in the divided array we have decided to work on and based on that new middle point we can find the particular element from the array-->
+
+<!-- Important thing is that we have to implement the binary search only on sorted array or we have another options to sort the array first
+If we have unsorted array so might be possible we use linear search but sometimes it gives a low performance issue   -->
+
+<!-- In Iterative, we use loop -->
+<!-- In Recursive, we use Recursion -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [20, 5, 6, 3, 14];
+
+        for(let i = 0; i < data.length; i++){
+            for(let j = 0; j < data.length; j++){
+                
+                if(data[j] > data[j + 1]){
+                    let temp = data[j];
+                    data[j] = data[j + 1]
+                    data[j + 1] = temp
+                }
+            }
+        }
+        console.warn(data);
+    
+    // We have to know the three points in searching of the array
+    // 1. Mid point element of the array  
+    // 2. Start element to mid point element  
+    // 3. End element to mid point element  
+        
+        let sortedArr = [...data];  // 3, 5, 6, 14, 20
+
+        let find = 5;
+        let start = 0;
+        let end = data.length-1;
+        let position = undefined;
+        while(start <= end){
+        let mid = Math.floor((start + end)/2);  // We can find the middle point by dividing the array with 2;
+
+    // If our finding element is bigger than the middle point then we search ahead and if the finding element is lower than the middle point then search towards backward  
+        if(data[mid] < find){
+            // Finding element is bigger than the mid point element
+            start = mid + 1
+
+        }else if(data[mid] === find){
+            // Finding element is equal to the mid point element
+            position = mid;
+            break;
+        }else{
+            end = mid - 1; 
+        }
+    }
+    console.warn(position);
+
+</script>
+</head>
+<body>
+    <h1>Binary Search with Iterative Approach</h1>
+</body>
+</html>

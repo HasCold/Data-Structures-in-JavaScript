@@ -1,0 +1,65 @@
+<!-- Reverse String with Stack -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String with Stack</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;  // data.length means total size of the array
+        
+        function push(newval){
+            data[currentSize] = newval;
+            currentSize += 1;
+        }
+
+        function pop(){
+            lastRemovedItem = data[currentSize - 1];
+            currentSize -= 1;
+            data.length = currentSize;
+
+            return lastRemovedItem;
+        }
+
+        function reverseStr(item){
+            for(let i = 0; i < item.length; i++){
+                push(item[i]);
+            }
+            console.warn("Element pushed into the stack :-", data);
+
+            // Below we get the revesre string array operation of the elements out of the Stack  
+
+            for(let i = 0; i < item.length; i++){
+                console.warn("Reverse string into an aray");
+               str[i] = pop();
+            }
+        }
+
+        // First we have to convert the string into an array through split method
+        let str = "hasan";
+        str = str.split("");
+        reverseStr(str);
+
+        // Now if you want to convert the array into String simply use join() method
+        str = str.join("");
+        console.warn(str);
+
+
+
+        // Call by reference in JavaScript will only work with either Array or with Object :- 
+
+        // function test(a){
+        //     a[0] = 200;
+        // }
+
+        // let a = [20];
+        // test(a);
+
+    </script>
+</head>
+<body>
+    <h1>Reverse String with String in JavaScript</h1>
+</body>
+</html>

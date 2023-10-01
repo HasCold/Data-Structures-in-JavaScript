@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Two Arrays</title>
+    <script>
+        //  If we merge two arrays then we can do the merging into the thrid array
+
+        const data = [10, 12, 3, 4, 55, 6];
+        const data2 = [1, 17, 24, 99, 5];
+        const data3 = [];
+
+        for(let i = 0; i < data.length; i++){
+            // data3.push(data[i]);  you can also push the elements of data into data3
+            data3[i] = data[i];
+        }
+
+        for(let i = 0; i < data2.length; i++ ){
+            data3[data.length + i] = data2[i]
+            // console.log(data.length + i) // Through this you can see the indexing
+        }
+
+        console.table(data3);
+
+        // BY-DEFAULT Reverse Funtion:- 
+
+        console.table('Reverse Function :- ', data3.reverse());
+
+        // BY-DEFAULT Merge Funtion:- 
+
+        let data4 = [...data, ...data2];  // The spread operator passes each element of the array as separate arguments.
+        console.log('Merge Function', data4);
+
+        // REST Operator:- Used to gather multiple individual elements or properties into an array when used in function parameters.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+19 lines of code --- Less Time Complexity 
+
+4 Space Complexity

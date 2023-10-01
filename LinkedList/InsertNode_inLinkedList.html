@@ -1,0 +1,88 @@
+
+<!-- Value | Next --- Value | Next --- Value | Next -->
+<!-- V => Value
+N => Next -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Node in Linked List</title>
+    <script>
+       class List{
+            constructor(data){
+                this.head = {
+                    value: data,
+                    next: null,
+                };
+                this.tail = this.head;
+                this.size = 1;
+            }
+            appendNode(nodeData){
+                let newNode = {
+                    value: nodeData,
+                    next: null 
+                };
+                this.tail.next = newNode;
+                this.tail = newNode;
+                this.size += 1;
+            }
+            traversing(){
+                let counter = 0;
+                let currentNode = this.head;
+
+                while(counter < this.size){
+                    // console.warn(currentNode)
+                    currentNode = currentNode.next;
+                    counter++
+                }
+            }
+            deleteOne(index){
+                // we have to let consider the leadAddress means the preceeding node of the deleteing node
+                let counter = 1;
+                let lead = this.head;
+                if(index === 1){
+                    this.head = this.head.next;
+                }else{
+                    while(counter < index - 1){
+                        lead = lead.next;
+                        counter++
+                    }
+                    let nextNode = lead.next.next;
+                    lead.next = nextNode;
+                    console.warn(lead);
+                }
+            }
+            insertNode(index, NodeVal){
+                let count = 1;
+                let currentNode = this.head;
+                while(count < index - 1){
+                    count++;
+                    currentNode = currentNode.next;
+                }
+                let nextNode = currentNode.next;
+                currentNode.next = {
+                    value: NodeVal,
+                    next: nextNode
+                }
+            }   
+        }
+
+    let list = new List(200);
+    list.appendNode(300);
+    list.appendNode(400);
+    list.appendNode(500);
+    list.appendNode(600);
+    list.appendNode(700);
+    list.appendNode(800);
+    list.traversing();
+    // list.deleteOne(3);
+    list.insertNode(3, 37000);
+    console.warn(list); 
+    </script>
+</head>
+<body>
+    <h1>Insert Node in Linked List in JavaScript</h1>
+</body>
+</html>

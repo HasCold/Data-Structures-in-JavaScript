@@ -1,0 +1,32 @@
+Most Important Topic
+
+f(n) = 5n^2 + 6n + 12 -->> Equation
+
+What is Asymtotic Analysis?
+
+Asymtotic Analysis make a decision that which Data structure should be used to solve the particular problem ; To find the better and efficient way to solve the problem. The Algorithm also depended on how much data we have 
+e.g. :- 
+Search ALgo -->> Linear Search and Binary Search
+
+1000 data -->> Good to go with Linear Search Algorithm
+100000 data -->> Average good to go with Linear Search Algorithm
+if you have 1000000000 data -->> Then might be possible Linear Search takes time and not good to use 
+
+No. of lines of execute + Loop present in the line = Time Complexity 
+
+variable, space = Space Complexity
+
+Standard Way to calculate the time complexity :- 
+
+Time Complexity directly depends on the "number of input". We don't include the static lines into the time complexity  
+
+We always remove the static lines either it is 4,6, 10 etc. and only consider the number of inputs and for loop running specific lines in the program when we calculate the time complexity 
+
+We do the time complexity on 5n^2 if it is not present then time complexity will have done on the 6n 
+
+
+ASYMPTOTIC NOTATION :- 
+
+1. Big O Notation 
+2. Omega Notation
+3. Theta Notation

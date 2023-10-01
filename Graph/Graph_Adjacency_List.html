@@ -1,0 +1,31 @@
+<!-- Graph Representation -->
+
+<!-- In adjacency List graph , we have the options to use the linkedlist, map data structure or with the normal array of an object -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Adjacency List</title>
+    <script>
+        // Here we are moving with the array of an object
+        
+        // List --- Array of an object
+        let AdjList = {
+            "a": ["b", "c"],
+            "b": ["a", "c", "d"],
+            "c": ["a", "b"],
+            "d": ["b"],
+        }
+
+        // Suppose if you want to check the what nodes are connected with "a" node  
+        console.warn("Connected with A node", AdjList.a);
+
+    </script>
+</head>
+<body>
+    <h1>Graph Adjacency List in JavaScript</h1>
+</body>
+</html>

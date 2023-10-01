@@ -1,0 +1,122 @@
+<!-- More Operations & Input in Queue -->
+
+<!-- Front, Rear and isEmpty operations -->
+
+<!-- Queue with JavaScript -->
+
+<!-- Two main operation in queue:-  -->
+<!-- Implement enqueue and dequeue functions for operations; -->
+
+<!-- Queue is linear data structure in which the elements are in sequence;  -->
+<!-- Graph and Tree are non-linear data structure -->
+
+<!-- In Stack, approach of the element First In Last Out and Last In First Out -->
+<!-- In Queue, approach of the element First In First Out and Last In Last Out  -->
+
+<!-- FIFO & LILO -->
+<!-- Enqueue -- Add item in queue; The item will be added in the queue from the front --> 
+<!-- Dequeue -- Remove item in queue; The item will be removed from the rear part of the queue -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations in Queue</title>
+    <script>
+        let queue = [];
+        let currentSize = queue.length;
+        let maxSize = 5;
+
+        // We have added the element from the start of the queue and remove the element from the start of the queue 
+
+        function enqueueWithBtn(){
+        let item = document.getElementById("Ele").value;
+        item = parseInt(item); // Convert the string into number
+            if(currentSize >= maxSize){
+                alert("Queue is already full !");
+            }else{    
+            queue[currentSize] = item;
+            currentSize++
+            document.getElementById("Ele").value = ""
+            }
+        }
+
+        function dequeue(){
+            if(!isEmpty()){
+
+                for(let i = 0; i < queue.length; i++){
+                    queue[i] = queue[i + 1];
+                }
+                currentSize--
+                queue.length = currentSize;
+            }else{
+                alert("Queue is already empty!");
+            }
+        }
+
+        function front(){
+            if(!isEmpty() ){
+            console.warn(queue[0]);
+            }else{
+                alert("Queue is already empty!")
+            }
+        }
+
+        function rear(){
+            if(!isEmpty()){
+            console.warn(queue[currentSize - 1]);
+            }else{
+                alert("Queue is already empty!")
+            }
+        }
+
+        function display(){  
+        // The innerHTML property gets or sets the HTML contents of the element
+        // The textContent does not automatically encode and decode text and hence allows us to work with only the content part of the element
+        let div = document.querySelector(".container");
+        let header = document.createElement("h2");
+        div.appendChild(header);
+
+        queue.forEach((items) => {
+            let pElement = document.createElement("p");
+
+            header.textContent = "The Queue Display"
+            pElement.textContent = items;
+
+            pElement.style.marginBottom = "2px"
+            div.appendChild(pElement);
+        })
+
+        console.warn(queue); 
+        }
+
+        function isEmpty(){  // We have to reverse the condition by isNot operator 
+            if(currentSize <= 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        display(); 
+
+    </script>
+    <style>
+        button{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Operations in Queue</h1>
+    <div class="container" style="display: flex; flex-direction: column; margin: 12px; width: 14rem; ">
+        <input placeholder="Enter Element" id="Ele" style="margin-bottom: 10px;">
+        <button onclick="enqueueWithBtn()">Add Elements</button>
+        <button onclick="dequeue()">Remove Elements</button>
+        <button onclick="display()">Display</button>
+        <button onclick="front()">Front Elements</button>
+        <button onclick="rear()">Rear Elements</button>
+    </body>
+</div>
+</html>

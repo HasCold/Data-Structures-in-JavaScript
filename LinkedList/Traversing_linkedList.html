@@ -1,0 +1,81 @@
+<!-- The basic working of linked list is based on the nodes -->
+<!-- Each Node has a two parts 
+1. Value
+2. Next ; Next == Address of next node -->
+
+<!-- Representation :- 
+    Head                                       Tail
+val | next --- val | next --- val | next --- val | null (last node) -->
+
+<!-- First part of linked list is called as Head
+Last part of linked list is called as Tail
+Node -> value | next  -->
+
+<!-- Linked List in JavaScript is implemented by the object -->
+<!-- {
+    value : 100, 
+    next: hashMemoryAddress (Next Node)
+} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing Linked List</title>
+        <script>
+        class List{
+            constructor(data){
+                this.head = {
+                    value: data,
+                    next: null,
+                };
+                this.tail = this.head;
+                this.size = 1;
+            }
+            appendNode(nodeData){
+                let newNode = {
+                    value: nodeData,
+                    next: null 
+                };
+                this.tail.next = newNode;
+                this.tail = newNode;
+                this.size += 1;
+            }
+            traversing(){
+                let counter = 0;
+                let currentNode = this.head;
+
+                while(counter < this.size){
+                    console.warn(currentNode)
+                    currentNode = currentNode.next;
+                    counter++
+                }
+            }
+        }
+
+    let list = new List(200);
+    list.appendNode(300);
+    list.appendNode(400);
+    list.appendNode(500);
+    list.appendNode(600);
+    list.appendNode(700);
+    list.appendNode(800);
+    list.traversing();
+    console.warn(list);
+
+    // JavaScript Shallow or Deep Copy
+
+    let x = {name: "anil"};
+    let y = x;
+
+    y.name = "peter";
+
+    // The name will also changed for x because y has the memory reference of x ; Object always work with the memory 
+    // console.warn(x)
+    </script>
+</head>
+<body>
+    <h1>Traversing Linked List</h1>
+</body>
+</html>

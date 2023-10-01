@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game in JavaScript</title>
+    <style>
+        .playground{
+            position: relative;
+            background-color: rgba(58, 128, 0, 0.586);
+            height: 700px;
+            width: 700px;
+            float: left;
+        }
+        .mosquito{
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;    
+        }
+    </style>
+</head>
+<body>
+    <div class="playground"> 
+        <img
+        class="mosquito"
+        id="mosquito"
+        onclick="hitMosquito()" 
+        src="https://tse4.mm.bing.net/th?id=OIP.O-f1aaDOQLuU4XkZZH5oyAHaD4&pid=Api&P=0&h=220" >
+    </div>
+    <div class="controls">
+        <h1 id="gameStarted"></h1>
+        <h3>
+        <span>Total Hit</span>
+        <span id="totalHit"></span>
+        </h3>
+        <button class="btn" onclick="startGame()">Start Game</button>
+        <h2>Timer:     
+            <span id="timer"></span>
+        </h2>
+    </div>
+
+    <script>
+        let hitCount = 0;
+        let gameStarted = false;
+        let TimerSecond = 30;
+        let timerInterval; // Added to hold the interval reference
+
+        const startGame = () => {
+            document.getElementById("gameStarted").innerText = "Game Started !!"
+            if(!gameStarted){
+                gameStarted = true;
+                hitCount = 0;
+                let mosquito = document.getElementById("mosquito");
+                let timerElement = document.getElementById("timer");
+                
+                let time = setInterval(() => {
+                    let i = Math.floor(Math.random() * 650) + 1;  // Because our div width is about 700px
+                    let j = Math.floor(Math.random() * 650) + 1;
+                    
+                    mosquito.style.left = i+"px";
+                    mosquito.style.top = j+"px";
+                }, 1500); // 1.5 seconds                
+
+                timeInterval = setInterval(() => {
+
+                    if(TimerSecond === 0){
+                        timerElement.innerText = "Time's Up !";
+                    }else{
+                        TimerSecond--;
+                        timerElement.innerText = `${TimerSecond} seconds remaining`;
+                    }
+                }, 1000); // 1 second
+
+                setTimeout(() => {
+                    clearTimeout(time, timerInterval);
+
+                    gameStarted = false;
+                    mosquito.style.left = "0px"
+                    mosquito.style.top = "0px"
+            document.getElementById("gameStarted").innerText = "Game Over !"
+            confirm("Game has been ended !");
+        }, 30000);   // 30 seconds
+    }
+}
+
+const hitMosquito = () => {
+        if(gameStarted){
+            hitCount++;
+            document.getElementById("totalHit").innerText = hitCount;
+        }else{
+            setTimeout(() => {
+                document.getElementById("totalHit").innerText = hitCount; 
+            }, 4000);  // 4 seconds
+        }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!-- Check String is palindrome or not -->
+
+<!-- The String which you can read by forward or read by backward will remains same is called palindrome string -->
+<!-- e.g :-  level = level -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String is palindrome</title>
+    <script>
+        let string = 'level';
+
+        function isPalindrome(data){
+            let start = 0;
+            let end = data.length - 1;
+            let result = true;        
+            
+            while(end > start){
+                if(data[start] !== data[end]){
+                    result = false;
+                }
+                start++;
+                end--
+            }
+            return result;
+        }
+
+    console.warn(isPalindrome(string))
+
+</script>
+</head>
+<body>
+    <h1>String is Palindrome</h1>
+</body>
+</html>

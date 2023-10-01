@@ -1,0 +1,36 @@
+<!-- Set Data Structure -->
+
+<!-- Set is almost our array type DS -->
+<!-- In out Set data structure the duplicates will be removed by this method -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Data Structure</title>
+    <script>
+        let data = new Set(["talha", "hasan", "umer", "hasan"]);
+        data.add({"email": "test@gmail.com"});
+        console.warn(data.has("umer"));
+
+        // data.clear()
+        // data.delete("umer")
+
+        // for (let x of data) {
+        //     console.warn(x);
+        // }
+
+        // data.forEach((val) => {
+        //     console.warn(val);
+        // })
+
+        console.warn(data.values())
+
+        console.warn(data);
+    </script>
+</head>
+<body>
+    <h1>Set data structure in JavaScript</h1>
+</body>
+</html>

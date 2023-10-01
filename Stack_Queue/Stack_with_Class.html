@@ -1,0 +1,51 @@
+<!-- Stack with Class -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack with Class</title>
+    <script>
+        class Stack {
+            // Whenever the class is formed ; the constructor would be call first
+            item = [];
+            currentSize;
+            maxSize;
+            lastRemovedItem;
+            constructor(size){
+                this.maxSize = size;  // this keyword refers to the current Instance of an object or the context in which the function is being executed;
+                this.currentSize = this.item.length;
+            }
+            
+            push(newVal){
+                if(this.currentSize >= this.maxSize){
+                    alert("Stack is full");
+                }else{
+                    this.item[this.currentSize] = newVal;
+                    this.currentSize++;
+                }
+            }
+
+            pop(){
+                if(this.currentSize > 0){
+                    this.currentSize -= 1;
+                    this.item.length = this.currentSize;
+                }else{
+                    alert("Stack is already empty");
+                }
+            }
+
+            display(){
+                console.warn(this.item);
+            }
+        }
+    let Size = 6;    
+    st1 = new Stack(Size);        
+    st1.push(20);
+    st1.display();
+</script>
+</head>
+<body>
+    <h1>Stack with Class</h1>
+</body>
+</html>
